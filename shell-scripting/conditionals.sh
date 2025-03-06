@@ -21,3 +21,12 @@ then
 else 
 	echo "${USER_NAME} is not root"
 fi
+
+# Ternary Operator
+
+[ -f conditionals.sh ] &&  touch conditionals.sh || echo "no existe"
+
+  # * [CONDICION] && <do_if_true> || <do_if_false> * #
+
+
+
