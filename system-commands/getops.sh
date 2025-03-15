@@ -2,17 +2,49 @@
 
 ##    -- Linux Command Options --    ##
 
-while getopts [OPTIONS, OPTION:value] VAR_TO_STORE_OPTIONº
+OPTIONS="hf:g-:"
+while getopts $OPTIONS OPTION
  do 
-   case $VAR_TO_STORE_OPTION
-     OPTION_1) ... ;;
-     OPTION_2) $OPTARG ;;
-     ?) ... ;;
+   case $OPTION in
+    -)
+      case $OPTARG in
+        help)
+          echo "Usage: $0 [-a|-f, FILE_NAME|-h, --help ]"
+          ;;
+        ?)  
+          echo "Usage: $0 [-a|-f, FILE_NAME|-h, --help ]"
+          ;;
+      esac;;
+    f) 
+      echo "Filename: $OPTARG"
+      ;;
+    g)  
+      echo "Hi, `id -un`!"
+      ;;
+    h) 
+      echo "Usage: $0 [-a|-f, FILE_NAME|-h, --help ]"
+      ;;
+    ?) 
+      echo "Usage: $0 [-a|-f, FILE_NAME|-h, --help ]"
+      ;;
     esac
   done
 
 
-## El snipet anteriorio muestra como usar las opciones de comando
-
-## short (-h) y long (--help) options, hacen la misma funcion mas su sintaxis es diferente
-
+  #  El snipet anteriorio muestra como usar las opciones de comando
+  #
+  #  short (-h) y long (--help) options, hacen la misma funcion mas su sintaxis es diferente
+  #  
+  #  si una opcion ocupa un valor se usa la sintaxis...
+  #
+  #     while getopts l: 
+  #       do
+  #         ...
+  #       done
+  #
+  #   "l:" es un indicador que la opcion 'l' requiere un valor
+  #
+  #  Un buen articulo para aprender como manejar las long options seria el siguiente
+  #
+  #     * https://stackoverflow.com/questions/402377/using-getopts-to-process-long-and-short-command-line-options/7680682#7680682 *
+  #
