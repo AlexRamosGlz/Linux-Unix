@@ -2,7 +2,7 @@
 
 ##      -- Instalar paquetes --     ##
 
-  # * Un package manager es utilizado para instalar, actualizar y remover aplicaciones * #
+  # Un package manager es utilizado para instalar, actualizar y remover aplicaciones
 
 
 apt search nvim     # Busca el package para instalar
