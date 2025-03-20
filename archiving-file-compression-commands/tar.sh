@@ -71,3 +71,22 @@ tar -xvf demo-tar-file.tar
 tar -xvf demo-tar-file --wildcards *.sh
 
 	# Se pueden extrer archivos individuales usando la opcion "--wildcar"
+
+
+## Compresion en el comando tar
+
+	# El comando tar puede ejectuar una compresion por si mismo,
+	# dependendiendo de que herramienta de compresion se quiere usar las 
+	# opciones son las siguientes
+	#
+	#	nombre	  opcion	extension
+	#	xz 		-> 	-J 	-> 	.txz
+	#	bzip2 	->	-j 	-> 	.tbz
+	#	gzip	->	-z	->	.tgz
+
+tar -cvJf demo-tar-file.txz	demo/
+
+
+## Descomprision en el comando tar
+
+tar	-xvJf demo-tar-file.txz extracted/
