@@ -7,6 +7,8 @@
     #
     # El comando no toma un archivo como argumento sino  
     # que lee el STDIN
+    #
+    # NOTA: el comando no altera archivos
 
 #   Remplazar texto
 
