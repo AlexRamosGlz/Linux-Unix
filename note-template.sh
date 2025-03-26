@@ -4,7 +4,7 @@ template() {
     
     local COMMAND_NAME=$1
 
-    local MAN_SYNOPSIS=`man $COMMAND_NAME 2> /dev/null | grep -i name | head -n 1`
+    local MAN_SYNOPSIS=`man $COMMAND_NAME 2> /dev/null | grep -E  "$COMMAND_NAME +\[" | head -n 1 | tr -s ' '`
   
 cat << EOF > $COMMAND_NAME.sh
 #!/bin/bash
@@ -17,8 +17,8 @@ EOF
 }
 
 usage() {
-    echo `$0 [OPTIONS] [COMMAND_NAME]`
-    exit 0
+    echo "$0 [OPTIONS] [COMMAND_NAME]"
+    exit 1
 }
 
 
@@ -43,13 +43,14 @@ do
     esac
 done
 
-    
-shift $(( $OPTIND - 1 ))
 
-[ $# -eq 0 ] && usage
+shift $(( OPTIND - 1 ))
+
+[[ $# -eq 0 ]] && usage 
+
 
 for COMMAND_NAME in $@
-do 
+do  
     template $COMMAND_NAME
 done
 
