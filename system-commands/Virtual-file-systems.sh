@@ -32,3 +32,6 @@ tree /proc/sys
     #   /proc/sys/kernel -> configuraciones del kernel
     #   /proc/sys/net   -> configuraciones de network
     #   /proc/sys/user  -> configuraciones relacionadas a users y grupos
+
+
+tree /sys
