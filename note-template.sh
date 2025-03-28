@@ -16,13 +16,17 @@ EOF
 
 }
 
+copy() {
+    echo "copiando a /user/bin"
+} 
+
 usage() {
     echo "$0 [OPTIONS] [COMMAND_NAME]"
     exit 1
 }
 
 
-OPTIONS="p:-:"
+OPTIONS="c-:"
 while getopts $OPTIONS OPTION
 do
     case $OPTION in
@@ -33,9 +37,9 @@ do
                     ;;
             esac;;
 
-        ## todo, que acepte un path como opcion
-        p)
-            W_PATH=$OPTARG
+        ## todo, copiar /user/bin
+        c)  
+            copy
             ;;
         *)
             usage

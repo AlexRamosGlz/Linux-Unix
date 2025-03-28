@@ -12,6 +12,8 @@
 
 #  syslog
 
+cat /var/log/syslog
+
    # syslog es el protocolo original para logging
    #
    #	- Los logs son guardados como simples archivos de texto
@@ -20,6 +22,8 @@
 
 
 #  journald
+
+journalclt
 
    # journald es el nuevo estandar
    #
