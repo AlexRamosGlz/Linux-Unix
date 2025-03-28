@@ -42,5 +42,5 @@ cat vmlinuz
 
 cat grub 
 
-    # conttiene los archivod de configuracion para el GRUB bootloader
+    # conttiene los archivos de configuracion para el GRUB bootloader
     #
