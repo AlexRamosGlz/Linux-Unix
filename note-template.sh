@@ -17,11 +17,30 @@ EOF
 }
 
 copy() {
-    echo "copiando a /user/bin"
+    if [[ `id -u` -ne 0 ]] 
+        then
+            echo -e "Must use root privilages to use this option" >&2
+            usage
+    fi
+
+    [ -f /usr/bin/note-template.sh ] && echo "The scrip already exists on /usr/bin" >&2 | exit 1
+
+    cp $0 /usr/bin &> /dev/null
+    
+    if [[ $? -ne 0 ]]
+        then
+            echo "Error while copying the script"
+            exit 1
+    fi
+
+    exit 0
 } 
 
 usage() {
-    echo "$0 [OPTIONS] [COMMAND_NAME]"
+    echo -e "Usage:\n\t$0 [OPTIONS] [COMMAND_NAME...]"
+    echo -e "\nOPTIONS:"
+    printf "\t-c\t Copy scrip to /usr/bin, must use root privilages\n"
+    printf "\t--help\t Prints a summary of %s command" $0 
     exit 1
 }
 
@@ -37,7 +56,7 @@ do
                     ;;
             esac;;
 
-        ## todo, copiar /user/bin
+        ## todo, copiar /usr/bin
         c)  
             copy
             ;;
