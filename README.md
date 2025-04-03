@@ -69,7 +69,7 @@ This is a template for creating notes with my own prefered template
 
 Options:
 
-```bash
+
     -c	 Copy scrip to /usr/bin, must use root privilages
 	--help	 Prints a summary of ./note-template.sh command
-```
+
