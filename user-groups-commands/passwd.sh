@@ -2,7 +2,23 @@
 
 ##    -- passwd [options] [LOGIN] --    ##
 
-  # * crea/cambia la contraseña de un USER * #
+  # crea/cambia la contraseña de un usario 
 
-passwd --stdin $USER_TO_CHANGE_PASSWD    # la opcion '--stdin' permite pasar la contraseña por stdin
-                                         # en lugar de pedirla por consola
+passwd --stdin teresa
+
+
+# cambiar passwd de otros usarios usando root 
+
+sudo passwd -eS teresa
+
+  # -e -> fuerza al usuario a cambiar de contrasena en su proximo login
+  # -S -> muestra informacion de status del usuario 
+
+sudo passwd -dl teresa
+
+  # -d -> borra la contrasena del usario, haciendo una cuenta sin contrasena
+  # -l -> bloquea la cuenta cuenta del usario
+
+sudo passwd -u teresa
+
+  # -u -> desbloquea la cuenta del usuario
