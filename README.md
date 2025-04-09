@@ -17,10 +17,30 @@ Linux-Course
 │   └── zip.sh
 ├── command-options-arguments
 │   └── getops.sh
+├── fetching-data
+│   └── curl.sh
 ├── file-directory-operations-commands
 │   ├── find.sh
 │   ├── ln-link.sh
 │   └── tree.sh
+├── file-managment-commands
+│   ├── extract-data-from-files
+│   │   ├── cut.sh
+│   │   ├── grep.sh
+│   │   ├── tr.sh
+│   │   └── wc.sh
+│   ├── file-ownership
+│   │   ├── chgrp.sh
+│   │   └── chown.sh
+│   └── file-permissions
+│       ├── chmod.sh
+│       └── test.txt
+├── networking-commands
+│   ├── host.sh
+│   ├── ip.sh
+│   ├── ping.sh
+│   └── ss.sh
+├── note-template.sh
 ├── package-managers
 │   ├── debian-based-package-manager.sh
 │   └── redhat-based-package-manager.sh
@@ -38,6 +58,7 @@ Linux-Course
 │   ├── functions.sh
 │   ├── generate-random-password.sh
 │   ├── getopts-command.sh
+│   ├── heredocs.sh
 │   ├── lesson-3.sh
 │   ├── pipe-redirection.sh
 │   ├── positional-parameters.sh
@@ -50,16 +71,43 @@ Linux-Course
 │   ├── useradd-passwd-command.sh
 │   └── while-loop.sh
 ├── system-commands
+│   ├── boot-files.sh
+│   ├── chsh.sh
+│   ├── dmesg.sh
+│   ├── etc-config-files.sh
+│   ├── free.sh
 │   ├── getops.sh
-│   └── internal-external-commands.sh
+│   ├── internal-external-commands.sh
+│   ├── lscpu.sh
+│   ├── man-hier.sh
+│   ├── ps.sh
+│   ├── system-logging
+│   │   ├── journalctl.sh
+│   │   ├── logrotate.sh
+│   │   └── system-logging.sh
+│   ├── top.sh
+│   ├── uname.sh
+│   ├── uptime.sh
+│   ├── Virtual-file-systems.sh
+│   └── which.sh
+├── update-readme-tree.sh
 └── user-groups-commands
     ├── adduser.sh
     ├── chage.sh
+    ├── chfn.sh
+    ├── groupadd.sh
+    ├── groupdel.sh
+    ├── groupmod.sh
+    ├── groups.sh
     ├── hostname.sh
     ├── id.sh
+    ├── last.sh
     ├── passwd.sh
     ├── su-switch-user.sh
-    └── who.sh
+    ├── userdel.sh
+    ├── usermod.sh
+    ├── who.sh
+    └── w.sh
 ```
 
 ---

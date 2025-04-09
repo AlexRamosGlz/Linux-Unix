@@ -27,6 +27,18 @@ chmod u+x,g=rw,o-wx test.txt
     #   - -> revoca un permiso que ya se tenia
     #   = -> setea el permiso no importande sus permisos anteriores
 
+# Special permissions
+
+chmod u=rws test.txt
+
+    # en el modo simbolico, los permisos especiales son seteados usando las
+    # abreviaciones...
+    #
+    #   SUID        ->  s (solo para users)
+    #   SGID        ->  s (solo para groups)
+    #   sticky bit  ->  t (solo para others)
+
+
 
 # Numeric mode
 
@@ -53,3 +65,17 @@ chmod -R 755 ./
     
     # -R -> la opcion cambia los permisos de los archivos que estan dentro del directorio
     # 
+
+#Special permissions
+
+chmod 1755 test.txt
+
+    # en el modo numerico, los permisos especiales son seteados agreando un
+    # numero mas antes de los 3 que ya conocemos, el 1er digito representa el permiso
+    # special y su valor es octal
+    #
+    #       Special Permiso     Valor Ocatal
+    #          SUID                  4
+    #          SGID                  2
+    #          sticky bit            1 
+ 
