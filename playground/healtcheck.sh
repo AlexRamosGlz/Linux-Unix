@@ -7,10 +7,10 @@ UPTIME=$(uptime --since)
 DATE=$(date --date="$UPTIME")
 echo $DATE
 
-cat << _EOF_
+cat << _EOF_ > healthcheck.html
 <html>
     <head>
-        <title>$TITLE<title>
+        <title>$TITLE</title>
     </head>
 
     <body>

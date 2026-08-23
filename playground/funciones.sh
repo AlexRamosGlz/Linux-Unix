@@ -16,6 +16,10 @@ playground() {
         index=$(($index + 1))
     done
 
+    for index in ${ARRAY[@]}; do
+        echo "$index usando for"
+    done
+
     echo "funcion $FUNCNAME() terminada, $SALUDO"
 }
 
