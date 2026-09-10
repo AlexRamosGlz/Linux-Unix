@@ -13,6 +13,7 @@ find: ‘/tmp/snap-private-tmp’: Permission denied
 find: ‘/snap/core24/1587/etc/credstore’: Permission denied
 find: ‘/snap/core24/1587/etc/credstore.encrypted’: Permission denied
 find: ‘/snap/core24/1587/etc/polkit-1/rules.d’: Permission denied
+
 find: ‘/snap/core24/1587/etc/ssl/private’: Permission denied
 find: ‘/snap/core24/1587/root’: Permission denied
 find: ‘/snap/core24/1587/run/cryptsetup’: Permission denied
@@ -2614,3 +2615,22 @@ find: ‘/etc/cups/ssl’: Permission denied
 find: ‘/etc/polkit-1/rules.d’: Permission denied
 find: ‘/etc/credstore.encrypted’: Permission denied
 find: ‘*.conf’: No such file or directory
+
+find: ‘/tmp/systemd-private-26f65e92685e4d3eb90e21712d1bcf19-polkit.service-jC0IsA’: Permission denied
+
+
+find: ‘/lost+found’: Permission denied
+find: ‘/tmp/systemd-private-26f65e92685e4d3eb90e21712d1bcf19-fwupd.service-nzR8AZ’: Permission denied
+find: ‘/tmp/systemd-private-26f65e92685e4d3eb90e21712d1bcf19-bluetooth.service-5VjHuH’: Permission denied
+find: ‘/tmp/systemd-private-26f65e92685e4d3eb90e21712d1bcf19-power-profiles-daemon.service-obPUGs’: Permission denied
+find: ‘/tmp/systemd-private-26f65e92685e4d3eb90e21712d1bcf19-upower.service-dm1O44’: Permission denied
+find: ‘/tmp/systemd-private-26f65e92685e4d3eb90e21712d1bcf19-colord.service-pU7Veb’: Permission denied
+find: ‘/tmp/systemd-private-26f65e92685e4d3eb90e21712d1bcf19-ModemManager.service-5meSor’: Permission denied
+find: ‘/tmp/systemd-private-26f65e92685e4d3eb90e21712d1bcf19-systemd-logind.service-9KP8Zh’: Permission denied
+find: ‘/tmp/systemd-private-26f65e92685e4d3eb90e21712d1bcf19-switcheroo-control.service-QPqK32’: Permission denied
+find: ‘/tmp/systemd-private-26f65e92685e4d3eb90e21712d1bcf19-polkit.service-jC0IsA’: Permission denied
+find: ‘/tmp/systemd-private-26f65e92685e4d3eb90e21712d1bcf19-chrony.service-DeDaAw’: Permission denied
+find: ‘/tmp/snap-private-tmp’: Permission denied
+find: ‘/snap/core24/1587/etc/credstore’: Permission denied
+find: ‘/snap/core24/1587/etc/credstore.encrypted’: Permission denied
+find: ‘/snap/core24/1587/etc/polkit-1/rules.d’: Permission denied
