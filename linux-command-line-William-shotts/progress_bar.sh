@@ -1,29 +1,37 @@
 #!/bin/bash
 
-text="Progreso...100"
-width=$(tput cols)
-
-calculate_text_position () {
-
-	[ "$(wc -c <<< "$text")" -eq 0 ] && text_position=0
-
-	text_position=$(echo "($(tput cols)/2)-(15/2)" | bc)
+calculate_spaces() {
+  width=$(tput cols)
+  text="{$1:- Progreso...}"
+  text_width=$(echo "$text" | wc -c)
+  second_width=$(((width - text_width)/2))
 }
 
 
-draw_bar() {
-	printf "[\e[999C]\r\e[$((text_position))C$text\r\e[1C\e[s"
-	for i in $(seq 2 $(tput cols)); do
-		range="{$i..236}"
-		if (( i >= (text_position - 1) ||  i >= text_position + 16 )); then
-			printf "\e[$((i))C"	 				
-		else  	
-	 		printf "#%.0s\e[s" $range
-			sleep 0.09
-		fi	
-	done
+update_progress() {
+  printf "\r\033[%dCProgreso...%d%%" $second_width $1
 }
 
+fill_before_text() { 
+ for i in $(seq 1 $second_width); do 
+    #echo $range
+    printf "\033[u#\033[s"   
+    update_progress $i
+    sleep 0.05
+ done
+}
 
-calculate_text_position
-draw_bar
+fill_after_text() {
+  printf "\033[$iC\033[s" $((second_width + text_width))
+  for i in $(seq $((second_width + text_width)) $((width - 2))); do
+    printf "\033[u#\033[s"
+    update_progress $i
+    sleep 0.05
+  done
+}
+
+calculate_spaces
+printf "\r[\033[%dC]\r\033[1C\033[s" $((width - 1))
+fill_before_text
+fill_after_text
+
